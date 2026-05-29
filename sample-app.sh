@@ -8,8 +8,8 @@ cp sample_app.py tempdir/.
 cp -r templates/* tempdir/templates/.
 cp -r static/* tempdir/static/.
 
-echo "FROM python:3.8-slim" >> tempdir/Dockerfile
-echo "RUN pip install flask" >> tempdir/Dockerfile
+echo "FROM python:3.8.10-slim-buster" >> tempdir/Dockerfile
+echo "RUN pip install --no-cache-dir flask" >> tempdir/Dockerfile
 echo "COPY  ./static /home/myapp/static/" >> tempdir/Dockerfile
 echo "COPY  ./templates /home/myapp/templates/" >> tempdir/Dockerfile
 echo "COPY  sample_app.py /home/myapp/" >> tempdir/Dockerfile
